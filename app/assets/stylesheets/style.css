@@ -1,0 +1,32 @@
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.container-item {
+  margin: 5px;
+  background-color: #ccc;
+  text-align: center;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.d-block {
+  display: block;
+}
+
+.text-center {
+  text-align: center;
+}
+

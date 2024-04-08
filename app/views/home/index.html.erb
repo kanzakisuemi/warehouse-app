@@ -1,14 +1,21 @@
-<h1>Galpões & Estoque</h1>
+<div>
+  <%= flash[:notice] %>
+</div>
+<%= link_to "Cadastrar Galpão", new_warehouse_path, class: "d-block text-center" %>
+<section id="warehouses" class="container">  
+  <h3 style="text-align: center;">Galpões</h3>
 
-<p>Lista de galpões cadastrados:</p>
+  <% if @warehouses.empty? %>
+    <p>Não existem galpões cadastrados</p>
+  <% end %>
 
-<% @warehouses.each do |warehouse| %>
-  <%= link_to "#{warehouse.name}", warehouse %>
-  <span>Código: <%= warehouse.code %></span>
-  <span>Cidade: <%= warehouse.city %></span>
-  <span><%= warehouse.area %> m2</span>
-<% end %>
+  <% @warehouses.each do |warehouse| %>
+    <div class="container-item">
+      <%= link_to "#{ warehouse.name }", warehouse %>
+      <span>Código: <%= warehouse.code %></span>
+      <span>Cidade: <%= warehouse.city %></span>
+      <span><%= warehouse.area %> m2</span>
+    </div>    
+  <% end %>
 
-<% if @warehouses.empty? %>
-  <p>Não existem galpões cadastrados</p>
-<% end %>
+</section>

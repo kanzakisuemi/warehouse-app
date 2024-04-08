@@ -1,0 +1,35 @@
+<%= form_with(model: @warehouse, class: "container") do |form| %> 
+  <div class="container-item">
+    <%= form.label :name, "Nome" %>
+    <%= form.text_field :name, style: "padding: 3px; width:70%;" %>
+  </div>
+  <div class="container-item">
+    <%= form.label :description, "Descrição", style: "vertical-align: top;" %>
+    <%= form.text_area :description, style: "padding: 3px; width:70%;" %>
+  </div>
+  <div class="container-item">
+    <%= form.label :code, "Código" %>
+    <%= form.text_field :code, style: "padding: 3px; width:70%;" %>
+  </div>
+  <div class="container-item">
+    <%= form.label :address, "Endereço" %>
+    <%= form.text_field :address, style: "padding: 3px; width:70%;" %>
+  </div>
+  <div class="container-item">
+    <%= form.label :city, "Cidade" %>
+    <%= form.text_field :city, style: "padding: 3px; width:70%;" %>
+  </div>
+  <div class="container-item">
+    <%= form.label :cep, "CEP" %>
+    <%= form.text_field :cep, style: "padding: 3px; width:70%;" %>
+  </div>
+  <div class="container-item">
+    <%= form.label :area, "Área" %>
+    <%= form.number_field :area, style: "padding: 3px; width:70%;" %>
+  </div>
+  <div class="container-item bg-white">
+    <%= form.submit "Cadastrar" %>
+  </div>
+<% end %>
+
+<%= link_to "Voltar", root_path, class: "d-block text-center" %>
