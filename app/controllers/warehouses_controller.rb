@@ -1,5 +1,5 @@
 class WarehousesController < ApplicationController
-  before_action :find_warehouse, only: %i[show edit update]
+  before_action :find_warehouse, only: %i[show edit update destroy]
 
   def show; end
 
@@ -28,6 +28,12 @@ class WarehousesController < ApplicationController
       flash.now[:notice] = 'Galpão não atualizado'
       render 'edit'
     end
+  end
+
+  def destroy
+    @warehouse.destroy
+    flash[:notice] = 'Galpão excluído com sucesso'
+    redirect_to root_path
   end
 
   private

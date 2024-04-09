@@ -7,7 +7,7 @@
   <p>Endereço: <%= @warehouse.address %> CEP: <%= @warehouse.cep %></p>
   <p><%= @warehouse.description %></p>
 
-  <%= link_to 'Editar Galpão', edit_warehouse_path(@warehouse) %>
-
   <%= link_to 'Voltar', root_path %>
+  <%= link_to 'Editar Galpão', edit_warehouse_path(@warehouse) %>
+  <%= button_to "Remover Galpão", @warehouse, method: :delete %>
 </div>
