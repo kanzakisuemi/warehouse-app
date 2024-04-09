@@ -1,13 +1,11 @@
 <div class="container text-center" style="border-color: transparent;">
   <% if flash[:notice] %>
-    <h2 style="color: red;">
-      <%= flash[:notice] %>
-    </h2>
+    <h2 style="color: red;"><%= flash[:notice] %></h2>
   <% end %>
 
   <% if @warehouse.errors.any? %>
     <div style="color: red;">
-      <h3><%= pluralize(@warehouse.errors.count, "erro") %> impediram o cadastro do galpão:</h3>
+      <h3><%= pluralize(@warehouse.errors.count, "erro") %> impediram a atualização do galpão:</h3>
       <% @warehouse.errors.full_messages.each do |message| %>
         <p><%= message %></p>
       <% end %>
