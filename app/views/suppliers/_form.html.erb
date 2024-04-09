@@ -1,0 +1,35 @@
+<%= form_with(model: @supplier, class: "container") do |form| %> 
+  <div class="container-item">
+    <%= form.label :corporate_name %>
+    <%= form.text_field :corporate_name, style: "padding: 3px; width:70%;" %>
+  </div>
+  <div class="container-item">
+    <%= form.label :brand_name %>
+    <%= form.text_field :brand_name, style: "padding: 3px; width:70%;" %>
+  </div>
+  <div class="container-item">
+    <%= form.label :employer_identification_number %>
+    <%= form.text_field :employer_identification_number, style: "padding: 3px; width:70%;" %>
+  </div>
+  <div class="container-item">
+    <%= form.label :address %>
+    <%= form.text_field :address, style: "padding: 3px; width:70%;" %>
+  </div>
+  <div class="container-item">
+    <%= form.label :city %>
+    <%= form.text_field :city, style: "padding: 3px; width:70%;" %>
+  </div>
+  <div class="container-item">
+    <%= form.label :cep %>
+    <%= form.text_field :cep, style: "padding: 3px; width:70%;" %>
+  </div>
+  <div class="container-item">
+    <%= form.label :email %>
+    <%= form.number_field :email, style: "padding: 3px; width:70%;" %>
+  </div>
+  <div class="container-item bg-white">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to "Voltar", root_path, class: "d-block text-center" %>

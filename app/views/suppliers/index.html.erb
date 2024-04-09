@@ -1,6 +1,10 @@
-<% if @suppliers.empty? %>
-  <p class="text-center">Não existem fornecedores cadastrados</p>
-<% end %>
+<h3 class="text-center" style="color: green;">
+  <%= flash[:notice] %>
+</h3>
+
+<div class="d-flex justify-content-center" style="margin-bottom: 1rem;">  
+  <%= link_to "Cadastrar Fornecedor", new_supplier_path, class: "button" %>
+</div>
 
 <section class="container">
   <h3 class="text-center">Fornecedores</h3>
@@ -16,5 +20,3 @@
     <% end %>
   <% end %>
 </section>
-
-<div style="min-height: 50px;"></div>
