@@ -1,0 +1,13 @@
+<% if @suppliers.empty? %>
+  <p class="text-center">Não existem fornecedores cadastrados</p>
+<% end %>
+
+<div class="container">
+  <% @suppliers.each do |supplier| %>
+    <%= link_to "#", class: "container-item" do %>
+    <%# <%= link_to supplier do %> %>
+      <%= content_tag(:span, supplier.brand_name) %>
+      <%= content_tag(:span, supplier.city) %>
+    <% end %>
+  <% end %>
+</div>
