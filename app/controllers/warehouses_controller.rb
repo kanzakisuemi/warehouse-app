@@ -1,8 +1,7 @@
 class WarehousesController < ApplicationController
-  
-  def show
-    find_warehouse
-  end
+  before_action :find_warehouse, only: %i[show edit update]
+
+  def show; end
 
   def new
     @warehouse = Warehouse.new
@@ -19,12 +18,9 @@ class WarehousesController < ApplicationController
     end
   end
 
-  def edit
-    find_warehouse
-  end
+  def edit; end
 
   def update
-    find_warehouse
     if @warehouse.update(warehouse_params)
       flash[:notice] = 'Galpão atualizado com sucesso'
       redirect_to root_path

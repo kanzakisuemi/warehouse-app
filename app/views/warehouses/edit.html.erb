@@ -15,36 +15,4 @@
   <% end %>  
 </div>
 
-<%= form_with(model: @warehouse, class: "container") do |form| %> 
-  <div class="container-item">
-    <%= form.label :name %>
-    <%= form.text_field :name, style: "padding: 3px; width:70%;" %>
-  </div>
-  <div class="container-item">
-    <%= form.label :description, style: "vertical-align: top;" %>
-    <%= form.text_area :description, style: "padding: 3px; width:70%;" %>
-  </div>
-  <div class="container-item">
-    <%= form.label :code %>
-    <%= form.text_field :code, style: "padding: 3px; width:70%;" %>
-  </div>
-  <div class="container-item">
-    <%= form.label :address %>
-    <%= form.text_field :address, style: "padding: 3px; width:70%;" %>
-  </div>
-  <div class="container-item">
-    <%= form.label :city %>
-    <%= form.text_field :city, style: "padding: 3px; width:70%;" %>
-  </div>
-  <div class="container-item">
-    <%= form.label :cep %>
-    <%= form.text_field :cep, style: "padding: 3px; width:70%;" %>
-  </div>
-  <div class="container-item">
-    <%= form.label :area %>
-    <%= form.number_field :area, style: "padding: 3px; width:70%;" %>
-  </div>
-  <div class="container-item bg-white">
-    <%= form.submit %>
-  </div>
-<% end %>
+<%= render "form" %>
