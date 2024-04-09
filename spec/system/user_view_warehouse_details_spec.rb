@@ -14,6 +14,7 @@ describe 'Usuário vê detalhes de um galpão' do
     expect(page).to have_content('Endereço: Avenida do Aeroporto, 1000 CEP: 86050-270')
     expect(page).to have_content('Galpão destinado à cargas internacionais')
   end
+
   it 'e volta para a tela inicial' do
     w = Warehouse.create(name: 'Curitiba', code: 'CWB', city: 'Curitiba', area: 100_000, address: 'Avenida do Aeroporto, 1000', cep: '86050-270', description: 'Galpão destinado à cargas internacionais')
 

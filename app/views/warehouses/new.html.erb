@@ -1,3 +1,9 @@
+<% if flash[:notice] %>
+  <div style="color: red;">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
 <%= form_with(model: @warehouse, class: "container") do |form| %> 
   <div class="container-item">
     <%= form.label :name, "Nome" %>

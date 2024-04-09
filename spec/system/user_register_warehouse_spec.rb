@@ -38,6 +38,19 @@ describe 'Usuário cadastra um galpão' do
     expect(page).to have_content('Código: CWB')
     expect(page).to have_content('Cidade: Curitiba')
     expect(page).to have_content('100000 m2')
-    
+  end
+
+  it 'com dados incompletos' do
+
+    visit root_path
+    click_on 'Cadastrar Galpão'
+
+    fill_in 'Nome', with: ''
+    fill_in 'Descrição', with: ''
+    fill_in 'Código', with: ''
+
+    click_on 'Cadastrar'
+
+    expect(page).to have_content('Galpão não cadastrado')
   end
 end
