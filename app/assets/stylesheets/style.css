@@ -1,5 +1,34 @@
 a {
   text-decoration: none;
+  color: inherit;
+}
+
+.button {
+  padding: 12px 19px;
+  border: none;
+  color: rgb(16, 52, 170);
+  cursor: pointer;
+  background-color: rgb(190, 219, 253);
+  border-radius: 7px;
+  font-weight: bold;
+  transition: 0.5s;
+  gap: 4px;
+  font-size: 1rem;
+  box-shadow: rgba(150, 143, 143, 0.2) 0px 2px 8px 0px;
+}
+
+.button:hover {
+  background-color: rgb(164, 206, 253);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.nav {
+  padding-top: 0.50rem; padding-bottom: 0.50rem;
+}
+
+.nav-item {
+  font-size: 1.25rem;
+  margin-left: 1rem;
 }
 
 .container {
@@ -10,12 +39,27 @@ a {
 }
 
 .container-item {
+  display: block;
   margin: 5px;
-  background-color: #ccc;
+  background-color: rgb(190, 219, 253);
   text-align: center;
   border-radius: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .bg-white {

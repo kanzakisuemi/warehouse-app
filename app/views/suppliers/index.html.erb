@@ -2,11 +2,19 @@
   <p class="text-center">Não existem fornecedores cadastrados</p>
 <% end %>
 
-<div class="container">
+<section class="container">
+  <h3 class="text-center">Fornecedores</h3>
+
+  <% if @suppliers.empty? %>
+    <p class="text-center">Não existem fornecedores cadastrados</p>
+  <% end %>
+
   <% @suppliers.each do |supplier| %>
-    <%= link_to supplier, class: "container-item" do %>
+    <%= link_to supplier, class: "container-item d-flex justify-content-between" do %>
       <%= content_tag(:span, supplier.brand_name) %>
       <%= content_tag(:span, supplier.city) %>
     <% end %>
   <% end %>
-</div>
+</section>
+
+<div style="min-height: 50px;"></div>
