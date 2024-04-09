@@ -25,11 +25,11 @@
   </div>
   <div class="container-item">
     <%= form.label :email %>
-    <%= form.number_field :email, style: "padding: 3px; width:70%;" %>
+    <%= form.text_field :email, style: "padding: 3px; width:70%;" %>
   </div>
   <div class="container-item bg-white">
     <%= form.submit %>
   </div>
 <% end %>
 
-<%= link_to "Voltar", root_path, class: "d-block text-center" %>
+<%= link_to "Voltar", suppliers_path, class: "d-block text-center" %>
