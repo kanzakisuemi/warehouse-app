@@ -60,12 +60,12 @@ describe 'Usuário cadastra fornecedor' do
 
   it 'com CNPJ já cadastrado' do
     Supplier.create!(
-      corporate_name: 'Khy by Kylie Jenner', 
-      brand_name: 'Khy', 
-      employer_identification_number: '8895400053', 
-      address: 'Quinta avenida, 350', 
-      city: 'New York', 
-      cep: '10118011', 
+      corporate_name: 'Khy by Kylie Jenner',
+      brand_name: 'Khy',
+      employer_identification_number: '8895400053',
+      address: 'Quinta avenida, 350',
+      city: 'New York',
+      cep: '10118011',
       email: 'support@khy.com'
     )
 

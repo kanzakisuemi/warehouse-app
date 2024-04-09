@@ -1,5 +1,5 @@
 class WarehousesController < ApplicationController
-  before_action :find_warehouse, only: %i[show edit update destroy]
+  before_action :set_warehouse, only: %i[show edit update destroy]
 
   def show; end
 
@@ -42,7 +42,7 @@ class WarehousesController < ApplicationController
     params.require(:warehouse).permit(:name, :code, :city, :area, :address, :cep, :description)
   end
 
-  def find_warehouse
+  def set_warehouse
     @warehouse = Warehouse.find(params[:id])
   end
 end

@@ -2,7 +2,15 @@ require 'rails_helper'
 
 describe 'Usuário acessa um fornecedor' do
   it 'e vê detalhes' do
-    Supplier.create!(corporate_name: 'Kylie Cosmetics, LLC', brand_name: 'Kylie Cosmetics', employer_identification_number: '8895400053', address: 'Quinta avenida, 350', city: 'New York', cep: '10118011', email: 'customerservice@kyliecosmetic.com')
+    Supplier.create!(
+      corporate_name: 'Kylie Cosmetics, LLC',
+      brand_name: 'Kylie Cosmetics',
+      employer_identification_number: '8895400053',
+      address: 'Quinta avenida, 350',
+      city: 'New York',
+      cep: '10118011',
+      email: 'customerservice@kyliecosmetic.com'
+    )
 
     visit root_path
     click_on 'Fornecedores'
@@ -18,7 +26,15 @@ describe 'Usuário acessa um fornecedor' do
   end
 
   it 'e volta para a tela inicial' do
-    Supplier.create!(corporate_name: 'Kylie Cosmetics, LLC', brand_name: 'Kylie Cosmetics', employer_identification_number: '8895400053', address: 'Quinta avenida, 350', city: 'New York', cep: '10118011', email: 'customerservice@kyliecosmetic.com')
+    Supplier.create!(
+      corporate_name: 'Kylie Cosmetics, LLC',
+      brand_name: 'Kylie Cosmetics',
+      employer_identification_number: '8895400053',
+      address: 'Quinta avenida, 350',
+      city: 'New York',
+      cep: '10118011',
+      email: 'customerservice@kyliecosmetic.com'
+    )
 
     visit root_path
     click_on 'Fornecedores'

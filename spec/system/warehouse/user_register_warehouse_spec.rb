@@ -63,15 +63,5 @@ describe 'Usuário cadastra um galpão' do
     expect(page).to have_content('Endereço não pode ficar em branco')
     expect(page).to have_content('CEP não pode ficar em branco')
     expect(page).to have_content('Descrição não pode ficar em branco')
-    
-
-    # "Nome não pode ficar em branco",
-    # "Código não pode ficar em branco",
-    # "Cidade não pode ficar em branco",
-    # "Área não pode ficar em branco",
-    # "Endereço não pode ficar em branco",
-    # "CEP não pode ficar em branco",
-    # "Descrição não pode ficar em branco",
-    # "Código não possui o tamanho esperado (3 caracteres)"
   end
 end
