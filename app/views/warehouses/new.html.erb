@@ -1,40 +1,52 @@
-<% if flash[:notice] %>
-  <div style="color: red;">
-    <%= flash[:notice] %>
-  </div>
-<% end %>
+<div class="container text-center" style="border-color: transparent;">
+  <% if flash[:notice] %>
+    <h2 style="color: red;">
+      <%= flash[:notice] %>
+    </h2>
+  <% end %>
+
+  <% if @warehouse.errors.any? %>
+    <div style="color: red;">
+      <h3><%= pluralize(@warehouse.errors.count, "erro") %> impediram o cadastro do galpão:</h3>
+      <% @warehouse.errors.full_messages.each do |message| %>
+        <p><%= message %></p>
+      <% end %>
+    </div>
+  <% end %>  
+</div>
+
 
 <%= form_with(model: @warehouse, class: "container") do |form| %> 
   <div class="container-item">
-    <%= form.label :name, "Nome" %>
+    <%= form.label :name %>
     <%= form.text_field :name, style: "padding: 3px; width:70%;" %>
   </div>
   <div class="container-item">
-    <%= form.label :description, "Descrição", style: "vertical-align: top;" %>
+    <%= form.label :description, style: "vertical-align: top;" %>
     <%= form.text_area :description, style: "padding: 3px; width:70%;" %>
   </div>
   <div class="container-item">
-    <%= form.label :code, "Código" %>
+    <%= form.label :code %>
     <%= form.text_field :code, style: "padding: 3px; width:70%;" %>
   </div>
   <div class="container-item">
-    <%= form.label :address, "Endereço" %>
+    <%= form.label :address %>
     <%= form.text_field :address, style: "padding: 3px; width:70%;" %>
   </div>
   <div class="container-item">
-    <%= form.label :city, "Cidade" %>
+    <%= form.label :city %>
     <%= form.text_field :city, style: "padding: 3px; width:70%;" %>
   </div>
   <div class="container-item">
-    <%= form.label :cep, "CEP" %>
+    <%= form.label :cep %>
     <%= form.text_field :cep, style: "padding: 3px; width:70%;" %>
   </div>
   <div class="container-item">
-    <%= form.label :area, "Área" %>
+    <%= form.label :area %>
     <%= form.number_field :area, style: "padding: 3px; width:70%;" %>
   </div>
   <div class="container-item bg-white">
-    <%= form.submit "Cadastrar" %>
+    <%= form.submit %>
   </div>
 <% end %>
 

@@ -1,6 +1,10 @@
 <div>
   <%= flash[:notice] %>
 </div>
+
+<div>
+  <%= I18n.translate("hello") %>
+</div>
 <%= link_to "Cadastrar Galpão", new_warehouse_path, class: "d-block text-center" %>
 <section id="warehouses" class="container">  
   <h3 style="text-align: center;">Galpões</h3>
