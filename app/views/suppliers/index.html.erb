@@ -4,8 +4,7 @@
 
 <div class="container">
   <% @suppliers.each do |supplier| %>
-    <%= link_to "#", class: "container-item" do %>
-    <%# <%= link_to supplier do %> %>
+    <%= link_to supplier, class: "container-item" do %>
       <%= content_tag(:span, supplier.brand_name) %>
       <%= content_tag(:span, supplier.city) %>
     <% end %>

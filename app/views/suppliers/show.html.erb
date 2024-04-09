@@ -1,0 +1,12 @@
+<div class="container text-center" style="padding-bottom: 10px;">  
+  <h3>Fornecedor <%= @supplier.brand_name %></h3>
+
+  <p>Nome corporativo: <%= @supplier.corporate_name %></p>
+  <p>Cidade: <%= @supplier.city %></p>
+  <p>Email: <%= @supplier.email %> m2</p>
+  <p>Endereço: <%= @supplier.address %> CEP: <%= @supplier.cep %></p>
+  <p>CNPJ: <%= @supplier.employer_identification_number %></p>
+
+  <%= link_to 'Voltar', suppliers_path %>
+</div>
+
