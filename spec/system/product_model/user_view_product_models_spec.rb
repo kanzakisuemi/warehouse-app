@@ -1,8 +1,16 @@
 require 'rails_helper'
 
 describe 'Usuário vê modelos de podutos' do
-  it 'a partir do menu' do
+  it 'se estiver autenticado' do
+    visit root_path
+    within('nav') do
+      click_on "Produtos"
+    end
 
+    expect(current_path).to eq new_user_session_path
+  end
+
+  it 'a partir do menu' do
     visit root_path
     within('nav') do
       click_on 'Produtos'
@@ -10,6 +18,11 @@ describe 'Usuário vê modelos de podutos' do
   end
 
   it 'com sucesso' do
+    kendall = User.create!(email: 'kendall@jenner.com', password: 'pass123456', name: 'Kendall Jenner')
+
+    visit root_path
+    login(kendall)
+
     kylie = Supplier.create!(
       corporate_name: 'Kylie Cosmetics, LLC',
       brand_name: 'Kylie Cosmetics',
@@ -32,6 +45,9 @@ describe 'Usuário vê modelos de podutos' do
   end
 
   it 'e não existem produtos cadastrados' do
+    kendall = User.create!(email: 'kendall@jenner.com', password: 'pass123456', name: 'Kendall Jenner')
+    login_as(kendall)
+
     visit root_path
     within('nav') do
       click_on 'Produtos'

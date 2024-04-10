@@ -2,6 +2,9 @@ require 'rails_helper'
 
 describe 'Usuário cadastra um modelo de produto' do
   it 'com sucesso' do
+    kendall = User.create!(email: 'kendall@jenner.com', password: 'pass123456', name: 'Kendall Jenner')
+    login_as(kendall)
+
     kylie = Supplier.create!(
       corporate_name: 'Kylie Cosmetics, LLC',
       brand_name: 'Kylie Cosmetics',
@@ -46,6 +49,9 @@ describe 'Usuário cadastra um modelo de produto' do
   end
 
   it 'deve preencher todos os campos' do
+    kendall = User.create!(email: 'kendall@jenner.com', password: 'pass123456', name: 'Kendall Jenner')
+    login_as(kendall)
+    
     kylie = Supplier.create!(
       corporate_name: 'Kylie Cosmetics, LLC',
       brand_name: 'Kylie Cosmetics',

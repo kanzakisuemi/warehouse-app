@@ -8,6 +8,7 @@ describe 'Usuário' do
 
     expect(current_path).to eq(new_user_session_path)
   end
+
   it 'faz login com sucesso' do
     User.create!(email: 'juu@kanzaki.com', password: '123456')
 
@@ -20,8 +21,8 @@ describe 'Usuário' do
     end
 
     within('nav') do
+      expect(page).to have_button('Sair')
       expect(page).not_to have_link('Entrar')
-      expect(page).to have_link('Sair')
       expect(page).to have_content('juu@kanzaki.com')
     end
   end
@@ -42,7 +43,7 @@ describe 'Usuário' do
 
     expect(page).to have_content('Logout efetuado com sucesso.')
     expect(page).to have_link('Entrar')
-    expect(page).not_to have_link('Sair')
+    expect(page).not_to have_button('Sair')
     expect(page).not_to have_content('juu@kanzaki.com')
   end
 end
