@@ -3,6 +3,10 @@ a {
   color: inherit;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .button {
   padding: 12px 19px;
   border: none;

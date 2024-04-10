@@ -1,0 +1,15 @@
+<section class="container">
+  <h3 class="text-center">Produtos</h3>
+
+  <% if @product_models.empty? %>
+    <p class="text-center">Não existem produtos cadastrados</p>
+  <% end %>
+
+  <% @product_models.each do |product_model| %>
+    <%= link_to '#', class: "container-item d-flex justify-content-between" do %>
+    <%# <%= link_to product_model, class: "container-item d-flex justify-content-between" do %> %>
+      <%= content_tag(:span, product_model.name) %>
+      <%= content_tag(:span, product_model.supplier.brand_name) %>
+    <% end %>
+  <% end %>
+</section>
