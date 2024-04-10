@@ -1,3 +1,7 @@
+<div class="d-flex justify-content-center" style="margin-bottom: 1rem;">  
+  <%= link_to "Cadastrar Produto", new_product_model_path, class: "button" %>
+</div>
+
 <section class="container">
   <h3 class="text-center">Produtos</h3>
 
@@ -6,8 +10,7 @@
   <% end %>
 
   <% @product_models.each do |product_model| %>
-    <%= link_to '#', class: "container-item d-flex justify-content-between" do %>
-    <%# <%= link_to product_model, class: "container-item d-flex justify-content-between" do %> %>
+    <%= link_to product_model, class: "container-item d-flex justify-content-between" do %>
       <%= content_tag(:span, product_model.name) %>
       <%= content_tag(:span, product_model.supplier.brand_name) %>
     <% end %>

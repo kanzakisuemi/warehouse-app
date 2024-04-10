@@ -1,0 +1,13 @@
+pt-BR:
+  activerecord:
+    models:
+      supplier: "Fornecedor"
+    attributes:
+      supplier:
+        corporate_name: "Nome Corporativo"
+        brand_name: "Nome da Marca"
+        employer_identification_number: "CNPJ"
+        address: "Endereço"
+        city: "Cidade"
+        cep: "CEP"
+        email: "Email"

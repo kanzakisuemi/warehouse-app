@@ -1,0 +1,35 @@
+<%= form_with(model: @product_model, class: "container") do |form| %> 
+  <div class="container-item">
+    <%= form.label :name %>
+    <%= form.text_field :name, style: "padding: 3px; width:70%;" %>
+  </div>
+  <div class="container-item">
+    <%= form.label :weight %>
+    <%= form.number_field :weight, style: "padding: 3px; width:70%;" %>
+  </div>
+  <div class="container-item">
+    <%= form.label :width %>
+    <%= form.number_field :width, style: "padding: 3px; width:70%;" %>
+  </div>
+  <div class="container-item">
+    <%= form.label :height %>
+    <%= form.number_field :height, style: "padding: 3px; width:70%;" %>
+  </div>
+  <div class="container-item">
+    <%= form.label :depth %>
+    <%= form.number_field :depth, style: "padding: 3px; width:70%;" %>
+  </div>
+  <div class="container-item">
+    <%= form.label :sku %>
+    <%= form.text_field :sku, style: "padding: 3px; width:70%;" %>
+  </div>
+  <div class="container-item">
+    <%= form.label :supplier_id %>
+    <%= form.collection_select :supplier_id, @suppliers, :id, :brand_name, { prompt: "Escolha um fornecedor" }, { style: "width:70%;" } %>
+  </div>
+  <div class="container-item bg-white">
+    <%= form.submit "Criar Produto" %>
+  </div>
+<% end %>
+
+<%= link_to "Voltar", product_models_path, class: "d-block text-center" %>
