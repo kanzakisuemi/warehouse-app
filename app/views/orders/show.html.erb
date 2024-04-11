@@ -1,0 +1,4 @@
+<%= content_tag(:span, @order.supplier.brand_name) %>
+<%= content_tag(:span, @order.warehouse.code) %>
+<%= content_tag(:span, @order.user.name) %>
+<%= content_tag(:span, I18n.localize(@order.estimated_delivery_date)) %>

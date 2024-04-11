@@ -1,0 +1,9 @@
+<% if @order.errors.any? %>
+  <div style="color: red;">
+    <h3><%= pluralize(@order.errors.count, "erro") %> impediram o cadastro do produto:</h3>
+    <% @order.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  </div>
+<% end %>  
+<%= render "form" %>

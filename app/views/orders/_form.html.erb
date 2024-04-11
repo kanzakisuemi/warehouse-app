@@ -1,0 +1,19 @@
+<%= form_with(model: @order, class: "container") do |form| %> 
+  <div class="container-item">
+    <%= form.label :estimated_delivery_date %>
+    <%= form.date_field :estimated_delivery_date, style: "padding: 3px; width:70%;" %>
+  </div>
+  <div class="container-item">
+    <%= form.label :supplier_id %>
+    <%= form.collection_select :supplier_id, @suppliers, :id, :brand_name, { prompt: "Escolha um fornecedor" }, { style: "width:70%;" } %>
+  </div>
+  <div class="container-item">
+    <%= form.label :warehouse_id %>
+    <%= form.collection_select :warehouse_id, @warehouses, :id, :code, { prompt: "Escolha um galpão" }, { style: "width:70%;" } %>
+  </div>
+  <div class="container-item bg-white">
+    <%= form.submit "Fazer Pedido" %>
+  </div>
+<% end %>
+
+<%= link_to "Voltar", orders_path, class: "d-block text-center" %>

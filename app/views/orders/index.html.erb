@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-center" style="margin-bottom: 1rem;">  
+  <%= link_to "Cadastrar Pedido", new_order_path, class: "button" %>
+</div>
+
+<section class="container">
+  <h3 class="text-center">Pedidos</h3>
+
+  <% if @orders.empty? %>
+    <p class="text-center">Não existem produtos cadastrados</p>
+  <% end %>
+
+  <% @orders.each do |order| %>
+    <%= link_to root_path, class: "container-item d-flex justify-content-between" do %>
+      <%= content_tag(:span, order.supplier.brand_name) %>
+      <%= content_tag(:span, order.warehouse.code) %>
+    <% end %>
+  <% end %>
+</section>
