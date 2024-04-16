@@ -9,7 +9,7 @@
   </div>
   <div class="container-item">
     <%= form.label :warehouse_id %>
-    <%= form.collection_select :warehouse_id, @warehouses, :id, :code, { prompt: "Escolha um galpão" }, { style: "width:70%;" } %>
+    <%= form.collection_select :warehouse_id, @warehouses, :id, :code_and_name, { prompt: "Escolha um galpão" }, { style: "width:70%;" } %>
   </div>
   <div class="container-item bg-white">
     <%= form.submit "Fazer Pedido" %>

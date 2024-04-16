@@ -54,14 +54,14 @@ describe 'Usuário' do
     expect(current_path).to eq(orders_path)
     click_on 'Cadastrar Pedido'
     select supplier_kylie.brand_name, from: 'Fornecedor'
-    select warehouse_sdu.code, from: 'Galpão'
+    select warehouse_sdu.code_and_name, from: 'Galpão'
     fill_in 'Data Prevista', with: '01/01/2022'
     click_on 'Fazer Pedido'
     #Assert
     expect(page).to have_content('Pedido cadastrado com sucesso')
     expect(page).to have_content('Kylie Cosmetics')
-    expect(page).to have_content('SDU')
-    expect(page).to have_content('Kendall Jenner')
+    expect(page).to have_content('SDU - Rio')
+    expect(page).to have_content('Kendall Jenner - kendall@jenner.com')
     expect(page).to have_content('01/01/2022')
     expect(page).not_to have_content('Maceio')
     expect(page).not_to have_content('Skims')
