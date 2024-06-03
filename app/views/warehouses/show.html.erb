@@ -7,6 +7,34 @@
   <p>Endereço: <%= @warehouse.address %> CEP: <%= @warehouse.cep %></p>
   <p><%= @warehouse.description %></p>
 
+  <div>
+    <h3>Itens em Estoque</h3>
+    <% @stock.each_pair do |stock_product, quantity| %>
+      <p><%= quantity %> x <%= stock_product.name %></p>
+    <% end %>
+  </div>
+
+  <div>
+    <h3>Saída de Estoque</h3>
+    <%= form_with(url: warehouse_stock_product_destination_index_path(@warehouse)) do |f| %>
+      <div>
+        <%= f.label(:product_model_id, 'Item para Saída') %>
+        <%= f.collection_select(:product_model_id, @product_models, :id, :name) %>
+      </div>
+      <div>
+        <%= f.label(:recipient, 'Destinatário') %>
+        <%= f.text_field :recipient %>
+      </div>
+      <div>
+        <%= f.label(:address, 'Endereço Destino') %>
+        <%= f.text_field :address %>
+      </div>
+      <div>
+        <%= f.submit "Confirmar Retirada" %>
+      </div>
+    <% end %>
+  </div>
+
   <%= link_to 'Voltar', root_path %>
   <%= link_to 'Editar Galpão', edit_warehouse_path(@warehouse) %>
   <%= button_to "Remover Galpão", @warehouse, method: :delete %>

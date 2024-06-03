@@ -14,7 +14,7 @@ describe 'Usuário' do
 
     visit root_path
     click_on 'Entrar'
-    within('form') do
+    within('form#new_user') do
       fill_in 'E-mail', with: 'juu@kanzaki.com'
       fill_in 'Senha', with: '123456'
       click_on 'Entrar'
@@ -33,7 +33,7 @@ describe 'Usuário' do
     visit root_path
     click_on 'Entrar'
 
-    within('form') do
+    within('form#new_user') do
       fill_in 'E-mail', with: 'juu@kanzaki.com'
       fill_in 'Senha', with: '123456'
       click_on 'Entrar'

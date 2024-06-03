@@ -7,7 +7,7 @@ describe 'Usuário cria conta' do
     click_on 'Entrar'
     click_on 'Criar Conta'
 
-    within('form') do
+    within('form#new_user') do
       fill_in 'Nome', with: 'Kylie Kristen Jenner'
       fill_in 'E-mail', with: 'khy@jenner.com'
       fill_in 'Senha', with: 'password123'

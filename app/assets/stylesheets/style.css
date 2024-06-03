@@ -41,6 +41,13 @@ a {
   display: inline;
 }
 
+.nav form input {
+  padding: 0.4rem 15px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
 .nav-item {
   font-size: 1.25rem;
   margin-left: 1rem;

@@ -1,0 +1,13 @@
+<h3>Resultados da busca por: <%= @code %></h3>
+
+<p><%= @orders.count %> <%= Order.model_name.human(count: @orders.count).downcase %> <%= I18n.t(:found, count: @orders.count) %></p>
+<% @orders.each do |order| %>
+  <p class="bold">
+    <%= content_tag(:span, Order.model_name.human) %>
+    <%= content_tag(:span, order.code) %>
+  </p>
+  <%= content_tag(:p, order.supplier.brand_name) %>
+  <%= content_tag(:p, order.warehouse.code_and_name) %>
+  <%= content_tag(:p, order.user.name_and_email) %>
+  <%= content_tag(:p, I18n.localize(order.estimated_delivery_date)) %>
+<% end %>

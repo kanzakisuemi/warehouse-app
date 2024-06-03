@@ -1,0 +1,13 @@
+<%= form_with(model: [@order, @order_item]) do |f| %>
+  <div class="container-item">
+    <%= f.label :product_model_id, "Produto" %>
+    <%= f.collection_select :product_model_id, @products, :id, :name, { prompt: "Escolha um produto" }, { style: "width:70%;" } %>
+  </div>
+  <div class="container-item">
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity, style: "padding: 3px; width:70%;" %>
+  </div>
+  <div class="container-item bg-white">
+    <%= f.submit "Adicionar Item" %>
+  </div>
+<% end %>

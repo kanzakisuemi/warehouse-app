@@ -138,7 +138,7 @@ GEM
       net-smtp
     marcel (1.0.4)
     matrix (0.4.2)
-    method_source (1.0.0)
+    method_source (1.1.0)
     mini_mime (1.1.5)
     minitest (5.22.3)
     multi_json (1.15.0)
@@ -206,7 +206,7 @@ GEM
     rdoc (6.6.3.1)
       psych (>= 4.0.0)
     regexp_parser (2.9.0)
-    reline (0.5.0)
+    reline (0.5.3)
       io-console (~> 0.5)
     responders (3.1.1)
       actionpack (>= 5.2)

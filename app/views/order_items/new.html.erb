@@ -1,0 +1,16 @@
+<div class="container text-center" style="border-color: transparent;">
+  <% if flash[:notice] %>
+    <h2 style="color: red;"><%= flash[:notice] %></h2>
+  <% end %>
+
+  <% if @order_item.errors.any? %>
+    <div style="color: red;">
+      <h3><%= pluralize(@order_item.errors.count, "erro") %> impediram o cadastro do produto:</h3>
+      <% @order_item.errors.full_messages.each do |message| %>
+        <p><%= message %></p>
+      <% end %>
+    </div>
+  <% end %>  
+</div>
+
+<%= render "form" %>

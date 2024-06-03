@@ -1,4 +1,32 @@
-<%= content_tag(:span, @order.supplier.brand_name) %>
-<%= content_tag(:span, @order.warehouse.code_and_name) %>
-<%= content_tag(:span, @order.user.name_and_email) %>
-<%= content_tag(:span, I18n.localize(@order.estimated_delivery_date)) %>
+<div class="container text-center">
+  <p class="bold">
+    <%= content_tag(:span, Order.model_name.human) %>
+    <%= content_tag(:span, @order.code) %>
+  </p>
+  <%= content_tag(:p, @order.supplier.brand_name) %>
+  <%= content_tag(:p, @order.warehouse.code_and_name) %>
+  <%= content_tag(:p, @order.user.name_and_email) %>
+  <%= content_tag(:p, I18n.localize(@order.estimated_delivery_date)) %>
+  <%= content_tag(:p, t(@order.status)) %>
+
+  <% if @order.pending? %>
+    <%= button_to "Em andamento", in_progress_order_path(@order) %>
+  <% end %>
+  <% if @order.pending? || @order.in_progress? %>
+    <%= button_to "Entregue", delivered_order_path(@order) %>
+  <% end %>
+  <% if @order.pending? || @order.in_progress? %>
+    <%= button_to "Cancelar", canceled_order_path(@order) %>
+  <% end %>
+
+  <% if current_user == @order.user %>
+    <%= link_to "Editar Pedido", edit_order_path(@order) %>
+  <% end %>
+
+  <div id="order-items">
+    <%= link_to "Adicionar Item", new_order_order_item_path(order_id: @order.id) %>
+    <%= @order.order_items.each do |item| %>
+      <p><%= item.quantity %> <%= item.product_model.name %></p>
+    <% end %>
+  </div>
+</div>
