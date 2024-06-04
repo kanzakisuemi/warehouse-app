@@ -1,17 +1,32 @@
-<nav class="nav">
-  <%= link_to "Galpões & Estoque", root_path, class: "nav-item bold", style: "font-size: 1.50rem;" %>
-  <%= link_to "Galpões", root_path, class: "nav-item" %>
-  <%= link_to "Fornecedores", suppliers_path, class: "nav-item" %>
-  <%= link_to "Produtos", product_models_path, class: "nav-item" %>
-  <%= link_to "Pedidos", orders_path, class: "nav-item" %>
-  <% if user_signed_in? %>
-    <%= form_with(url: search_orders_path, method: :get, class: "nav-item") do |f| %>
-      <%= f.text_field :query, placeholder: 'Buscar Pedido' %>
-      <%= f.submit "Buscar", class: "nav-item" %>
-    <% end %>
-    <%= button_to "Sair", destroy_user_session_path, method: :delete, class: "nav-item button login", style: "font-size: 1rem; padding: 8px 15px;" %>
-    <%= current_user.email %>
-  <% else %>
-    <%= link_to "Entrar", new_user_session_path, class: "nav-item button login" %>
-  <% end %>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <%= link_to "Galpões & Estoque", root_path, class: "navbar-brand" %>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><%= link_to "Galpões", root_path, class: "nav-link" %></li>
+        <li class="nav-item"><%= link_to "Fornecedores", suppliers_path, class: "nav-link" %></li>
+        <li class="nav-item"><%= link_to "Produtos", product_models_path, class: "nav-link" %></li>
+        <li class="nav-item"><%= link_to "Pedidos", orders_path, class: "nav-link" %></li>
+      </ul>
+      <% if user_signed_in? %>
+        <%= form_with(url: search_orders_path, method: :get, class: "d-flex position-absolute top-50 start-50 translate-middle") do |f| %>
+          <%= f.text_field :query, placeholder: 'Buscar Pedido', class: "form-control mx-2" %>
+          <%= f.submit "Buscar", class: "btn btn-secondary" %>
+        <% end %>
+        <div class="d-flex">
+          <div class="me-4 mt-1">
+            <%= current_user.email %>
+        </div>
+        <%= button_to "Sair", destroy_user_session_path, method: :delete, class: "btn btn-secondary" %>
+      <% else %>
+        <%= link_to "Entrar", new_user_session_path, class: "btn btn-secondary" %>
+      <% end %>
+    </div>
+  </div>
 </nav>

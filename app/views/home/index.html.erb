@@ -14,12 +14,14 @@
   <% end %>
 
   <% @warehouses.each do |warehouse| %>
-    <div class="container-item">
-      <%= link_to "#{ warehouse.name }", warehouse %>
-      <span>Código: <%= warehouse.code %></span>
-      <span>Cidade: <%= warehouse.city %></span>
-      <span><%= warehouse.area %> m2</span>
-    </div>    
+    <%= link_to warehouse, class: "card w-50 mx-auto mb-3 text-decoration-none" do %>
+      <div class="card-body">
+        <h5 class="card-title"><%= warehouse.name %> - <%= warehouse.code %></h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">Cidade: <%= warehouse.city %></h6>
+        <p class="card-text"><%= warehouse.description %></p>
+        <span><%= warehouse.area %> m2</span>
+      </div>
+    <% end %>
   <% end %>
 
 </section>

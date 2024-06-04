@@ -35,7 +35,7 @@ describe 'Usuário cadastra um galpão' do
     expect(page).to have_content('Galpão cadastrado com sucesso')
 
     expect(page).to have_content('Curitiba')
-    expect(page).to have_content('Código: CWB')
+    expect(page).to have_content('CWB')
     expect(page).to have_content('Cidade: Curitiba')
     expect(page).to have_content('100000 m2')
   end
