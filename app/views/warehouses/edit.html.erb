@@ -1,8 +1,4 @@
 <div class="container text-center" style="border-color: transparent;">
-  <% if flash[:notice] %>
-    <h2 style="color: red;"><%= flash[:notice] %></h2>
-  <% end %>
-
   <% if @warehouse.errors.any? %>
     <div style="color: red;">
       <h3><%= pluralize(@warehouse.errors.count, "erro") %> impediram a atualização do galpão:</h3>
@@ -10,7 +6,7 @@
         <p><%= message %></p>
       <% end %>
     </div>
-  <% end %>  
+  <% end %>
 </div>
 
 <%= render "form" %>

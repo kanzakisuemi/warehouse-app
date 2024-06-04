@@ -10,7 +10,7 @@
     <p>Endereço: <%= @warehouse.address %> CEP: <%= @warehouse.cep %></p>
     <p><%= @warehouse.description %></p>
     <%= link_to 'Editar Galpão', edit_warehouse_path(@warehouse), class: "card-link" %>
-    <%= link_to "Remover Galpão", @warehouse, data: { "turbo-method": :delete }, class: "card-link" %>
+    <%= link_to "Remover Galpão", @warehouse, data: { turbo_method: :delete }, class: "card-link" %>
   </div>
 
   <div class="card mt-3 pt-3 pb-3 w-75 mx-auto">

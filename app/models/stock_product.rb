@@ -1,5 +1,5 @@
 class StockProduct < ApplicationRecord
-  belongs_to :warehouse
+  belongs_to :warehouse, dependent: :destroy
   belongs_to :order
   belongs_to :product_model
   has_one :stock_product_destination

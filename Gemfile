@@ -18,6 +18,10 @@ gem "puma", "~> 5.0"
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
+gem "redis"
+
+gem "importmap-rails"
+
 gem "turbo-rails"
 
 gem "stimulus-rails"
@@ -35,9 +39,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "guard"
-  gem "guard-livereload", require: false
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
 end
 
+
+gem "hotwire-rails", "~> 0.1.3"
