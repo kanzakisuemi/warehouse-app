@@ -1,41 +1,49 @@
-<div class="container text-center" style="padding-bottom: 10px;">  
-  <h3>Galpão <%= @warehouse.code %></h3>
+<div class="container text-center">  
+  <%= link_to 'Voltar', root_path, class: "btn btn-secondary mt-3 mb-3" %>
 
-  <p>Nome: <%= @warehouse.name %></p>
-  <p>Cidade: <%= @warehouse.name %></p>
-  <p>Área: <%= @warehouse.area %> m2</p>
-  <p>Endereço: <%= @warehouse.address %> CEP: <%= @warehouse.cep %></p>
-  <p><%= @warehouse.description %></p>
+  <div class="card pt-3 pb-3 w-75 mx-auto">
+    <h3>Galpão <%= @warehouse.code %></h3>
 
-  <div>
+    <p>Nome: <%= @warehouse.name %></p>
+    <p>Cidade: <%= @warehouse.name %></p>
+    <p>Área: <%= @warehouse.area %> m2</p>
+    <p>Endereço: <%= @warehouse.address %> CEP: <%= @warehouse.cep %></p>
+    <p><%= @warehouse.description %></p>
+    <%= link_to 'Editar Galpão', edit_warehouse_path(@warehouse), class: "card-link" %>
+    <%= link_to "Remover Galpão", @warehouse, data: { "turbo-method": :delete }, class: "card-link" %>
+  </div>
+
+  <div class="card mt-3 pt-3 pb-3 w-75 mx-auto">
     <h3>Itens em Estoque</h3>
     <% @stock.each_pair do |stock_product, quantity| %>
       <p><%= quantity %> x <%= stock_product.name %></p>
     <% end %>
-  </div>
-
-  <div>
-    <h3>Saída de Estoque</h3>
-    <%= form_with(url: warehouse_stock_product_destination_index_path(@warehouse)) do |f| %>
-      <div>
-        <%= f.label(:product_model_id, 'Item para Saída') %>
-        <%= f.collection_select(:product_model_id, @product_models, :id, :name) %>
-      </div>
-      <div>
-        <%= f.label(:recipient, 'Destinatário') %>
-        <%= f.text_field :recipient %>
-      </div>
-      <div>
-        <%= f.label(:address, 'Endereço Destino') %>
-        <%= f.text_field :address %>
-      </div>
-      <div>
-        <%= f.submit "Confirmar Retirada" %>
-      </div>
+    <% if @stock.empty? %>
+      <p>Não existem itens em estoque</p>
     <% end %>
   </div>
 
-  <%= link_to 'Voltar', root_path %>
-  <%= link_to 'Editar Galpão', edit_warehouse_path(@warehouse) %>
-  <%= button_to "Remover Galpão", @warehouse, method: :delete %>
+  <% unless @stock.empty? %>
+    <div class="card mt-3 pt-3 pb-3 w-75 mx-auto mb-5">
+      <h3>Saída de Estoque</h3>
+      <%= form_with(url: warehouse_stock_product_destination_index_path(@warehouse)) do |f| %>
+        <div class="mx-auto w-75 mb-2">
+          <%= f.label(:product_model_id, 'Item para Saída', class: "text-muted") %>
+          <%= f.collection_select(:product_model_id, @product_models, :id, :name, {}, class: "form-select") %>
+        </div>
+        <div class="form-floating mx-auto w-75 mb-2">
+          <%= f.text_field :recipient, class: "form-control", required: true %>
+          <%= f.label(:recipient, 'Destinatário') %>
+        </div>
+        <div class="form-floating mx-auto w-75 mb-2">
+          <%= f.text_field :address, class: "form-control", required: true %>
+          <%= f.label(:address, 'Endereço Destino') %>
+        </div>
+        <div>
+          <%= f.submit "Confirmar Retirada", class: "btn btn-secondary" %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
 </div>
