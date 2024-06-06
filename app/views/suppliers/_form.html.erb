@@ -1,35 +1,34 @@
-<%= form_with(model: @supplier, class: "container") do |form| %> 
-  <div class="container-item">
+<%= form_with(model: @supplier, class: "container text-center mt-3") do |form| %> 
+  <%= link_to "Voltar", suppliers_path, class: "btn btn-secondary mb-3" %>
+  <div class="form-floating mb-2 w-50 mx-auto">
+    <%= form.text_field :corporate_name, class: "form-control" %>
     <%= form.label :corporate_name %>
-    <%= form.text_field :corporate_name, style: "padding: 3px; width:70%;" %>
   </div>
-  <div class="container-item">
+  <div class="form-floating mb-2 w-50 mx-auto">
+    <%= form.text_field :brand_name, class: "form-control" %>
     <%= form.label :brand_name %>
-    <%= form.text_field :brand_name, style: "padding: 3px; width:70%;" %>
   </div>
-  <div class="container-item">
+  <div class="form-floating mb-2 w-50 mx-auto">
+    <%= form.text_field :employer_identification_number, class: "form-control" %>
     <%= form.label :employer_identification_number %>
-    <%= form.text_field :employer_identification_number, style: "padding: 3px; width:70%;" %>
   </div>
-  <div class="container-item">
+  <div class="form-floating mb-2 w-50 mx-auto">
+    <%= form.text_field :address, class: "form-control" %>
     <%= form.label :address %>
-    <%= form.text_field :address, style: "padding: 3px; width:70%;" %>
   </div>
-  <div class="container-item">
+  <div class="form-floating mb-2 w-50 mx-auto">
+    <%= form.text_field :city, class: "form-control" %>
     <%= form.label :city %>
-    <%= form.text_field :city, style: "padding: 3px; width:70%;" %>
   </div>
-  <div class="container-item">
+  <div class="form-floating mb-2 w-50 mx-auto">
+    <%= form.text_field :cep, class: "form-control" %>
     <%= form.label :cep %>
-    <%= form.text_field :cep, style: "padding: 3px; width:70%;" %>
   </div>
-  <div class="container-item">
+  <div class="form-floating mb-2 w-50 mx-auto">
+    <%= form.text_field :email, class: "form-control" %>
     <%= form.label :email %>
-    <%= form.text_field :email, style: "padding: 3px; width:70%;" %>
   </div>
-  <div class="container-item bg-white">
+  <div class="">
     <%= form.submit %>
   </div>
 <% end %>
-
-<%= link_to "Voltar", suppliers_path, class: "d-block text-center" %>
